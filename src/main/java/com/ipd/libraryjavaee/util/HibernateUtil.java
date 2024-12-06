@@ -7,6 +7,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import com.ipd.libraryjavaee.entities.AppRole;
 import com.ipd.libraryjavaee.entities.AppUser;
+import com.ipd.libraryjavaee.entities.Commentaire;
+import com.ipd.libraryjavaee.entities.Membre;
+import com.ipd.libraryjavaee.entities.Ouvrage;
+import com.ipd.libraryjavaee.entities.Reservation;
+import com.ipd.libraryjavaee.entities.Salle;
 
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
@@ -26,6 +31,11 @@ public class HibernateUtil {
             sessionFactory = new MetadataSources(registry)
                 .addAnnotatedClass(AppUser.class)
                 .addAnnotatedClass(AppRole.class)
+                .addAnnotatedClass(Commentaire.class)
+                .addAnnotatedClass(Membre.class)
+                .addAnnotatedClass(Ouvrage.class)
+                .addAnnotatedClass(Reservation.class)
+                .addAnnotatedClass(Salle.class)                
                 .buildMetadata()
                 .buildSessionFactory();
         } catch (Exception e) {
